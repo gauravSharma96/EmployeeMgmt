@@ -1,0 +1,40 @@
+<h2>Add Record</h2>
+<div class="row indent">
+  <div class="col-3">Name</div>
+  <div class="col-8">
+    <input type="text" id=name name="name" class="form-control" required minlength="4" [(ngModel)]="employee.name">
+  </div>
+</div>
+<div class="row indent">
+  <div class="col-4">Phone</div>
+  <div class="col-3">
+    <input type="text" name="phone" class="form-control" [(ngModel)]="employee.phone" required>
+  </div>
+</div>
+<div class="row indent">
+  <div class="col-3">City</div>
+  <div class="col-8">
+    <input type="text" name="city" class="form-control" [(ngModel)]="employee.address.city">
+  </div>
+</div>
+<div class="row indent">
+  <div class="col-3">Address 1</div>
+  <div class="col-8">
+    <input type="text" name="addr1" class="form-control" [(ngModel)]="employee.address.address_line1">
+  </div>
+</div>
+<div class="row indent">
+  <div class="col-3">Address 2</div>
+  <div class="col-8">
+    <input type="text" name="addr2" class="form-control" [(ngModel)]="employee.address.address_line2">
+  </div>
+</div>
+<div class="row indent">
+  <div class="col-3">Postal Code</div>
+  <div class="col-8">
+    <input type="text" name="postal" class="form-control" [(ngModel)]="employee.address.postal_code">
+  </div>
+</div>
+<div style="text-align:center">
+  <a class="btn btn-primary" (click)="saveEmployee()">Save</a>
+</div>

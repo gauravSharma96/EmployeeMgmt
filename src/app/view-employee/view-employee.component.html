@@ -1,0 +1,31 @@
+<a class="btn btn-primary" routerLink="/employees/add">Add New</a>
+<div style="margin-top:10px;margin-bottom:10px">
+  <label style="color:blue;font-weight:bold;margin-right:10px">Search:</label>
+  <input type="text" placeholder="Search by Name or City" name="search" [(ngModel)]="searchText" (keyup.enter)="searchEmployee()">
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>City</th>
+      <th>Address 1</th>
+      <th>Address 2</th>
+      <th>Postal Code</th>
+      <th>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{employee.id}}</td>
+      <td>{{employee.name}}</td>
+      <td>{{employee.phone}}</td>
+      <td>{{employee.address.city}}</td>
+      <td>{{employee.address.address_line1}}</td>
+      <td>{{employee.address.address_line2}}</td>
+      <td>{{employee.address.postal_code}}</td>
+      <td><a routerLink="/employees/{{employee.id}}/edit">Edit</a></td>
+    </tr>
+  </tbody>
+</table>
